@@ -31,8 +31,14 @@
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
-		<string>UIInterfaceOrientationLandscapeLeft</string>
-		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>NSCameraUsageDescription</key>
+	<string>App wants to access camera</string>
+	<key>NSAppleMusicUsageDescription</key>
+	<string>App wants to access media</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>App wants to access micrphone</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>App wants to access photo library</string>
 </dict>
 </plist>
