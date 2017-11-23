@@ -15,6 +15,11 @@
 		1E4C98E41FBD5A3C00A37A39 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1E4C98E31FBD5A3C00A37A39 /* Assets.xcassets */; };
 		1E4C98E71FBD5A3C00A37A39 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1E4C98E51FBD5A3C00A37A39 /* LaunchScreen.storyboard */; };
 		8B6677261FBEA966003C01E4 /* SphereNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B6677251FBEA966003C01E4 /* SphereNode.swift */; };
+		8B8A8E4D1FC6F52900D3C934 /* TwinkleImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B8A8E481FC6F52900D3C934 /* TwinkleImage.png */; };
+		8B8A8E4E1FC6F52900D3C934 /* TwinkleImage1.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B8A8E491FC6F52900D3C934 /* TwinkleImage1.png */; };
+		8B8A8E4F1FC6F52900D3C934 /* TwinkleImage2.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B8A8E4A1FC6F52900D3C934 /* TwinkleImage2.png */; };
+		8B8A8E501FC6F52900D3C934 /* TwinkleImage3.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B8A8E4B1FC6F52900D3C934 /* TwinkleImage3.png */; };
+		8B8A8E511FC6F52900D3C934 /* TwinkleImage4.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B8A8E4C1FC6F52900D3C934 /* TwinkleImage4.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +34,11 @@
 		4C05D1269E13214D49BCC1AD /* Pods-KirakiraSample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KirakiraSample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KirakiraSample/Pods-KirakiraSample.debug.xcconfig"; sourceTree = "<group>"; };
 		7A49B8D71CC467608394D287 /* Pods-KirakiraSample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KirakiraSample.release.xcconfig"; path = "Pods/Target Support Files/Pods-KirakiraSample/Pods-KirakiraSample.release.xcconfig"; sourceTree = "<group>"; };
 		8B6677251FBEA966003C01E4 /* SphereNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SphereNode.swift; sourceTree = "<group>"; };
+		8B8A8E481FC6F52900D3C934 /* TwinkleImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TwinkleImage.png; sourceTree = "<group>"; };
+		8B8A8E491FC6F52900D3C934 /* TwinkleImage1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TwinkleImage1.png; sourceTree = "<group>"; };
+		8B8A8E4A1FC6F52900D3C934 /* TwinkleImage2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TwinkleImage2.png; sourceTree = "<group>"; };
+		8B8A8E4B1FC6F52900D3C934 /* TwinkleImage3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TwinkleImage3.png; sourceTree = "<group>"; };
+		8B8A8E4C1FC6F52900D3C934 /* TwinkleImage4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TwinkleImage4.png; sourceTree = "<group>"; };
 		9AA3749E2D4F1072ACD954E2 /* Pods_KirakiraSample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KirakiraSample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -72,6 +82,7 @@
 				1E4C98E31FBD5A3C00A37A39 /* Assets.xcassets */,
 				1E4C98E51FBD5A3C00A37A39 /* LaunchScreen.storyboard */,
 				1E4C98E81FBD5A3C00A37A39 /* Info.plist */,
+				8B8A8E471FC6F52900D3C934 /* Images */,
 				1E4C98E01FBD5A3C00A37A39 /* KirakiraSample.xcdatamodeld */,
 			);
 			path = KirakiraSample;
@@ -84,6 +95,18 @@
 				7A49B8D71CC467608394D287 /* Pods-KirakiraSample.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		8B8A8E471FC6F52900D3C934 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				8B8A8E481FC6F52900D3C934 /* TwinkleImage.png */,
+				8B8A8E491FC6F52900D3C934 /* TwinkleImage1.png */,
+				8B8A8E4A1FC6F52900D3C934 /* TwinkleImage2.png */,
+				8B8A8E4B1FC6F52900D3C934 /* TwinkleImage3.png */,
+				8B8A8E4C1FC6F52900D3C934 /* TwinkleImage4.png */,
+			);
+			path = Images;
 			sourceTree = "<group>";
 		};
 		A11296A27E0766ECED1AFC98 /* Frameworks */ = {
@@ -157,9 +180,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8B8A8E4D1FC6F52900D3C934 /* TwinkleImage.png in Resources */,
+				8B8A8E511FC6F52900D3C934 /* TwinkleImage4.png in Resources */,
+				8B8A8E501FC6F52900D3C934 /* TwinkleImage3.png in Resources */,
 				1E4C98E71FBD5A3C00A37A39 /* LaunchScreen.storyboard in Resources */,
 				1E4C98E41FBD5A3C00A37A39 /* Assets.xcassets in Resources */,
+				8B8A8E4F1FC6F52900D3C934 /* TwinkleImage2.png in Resources */,
 				1E4C98DF1FBD5A3C00A37A39 /* Main.storyboard in Resources */,
+				8B8A8E4E1FC6F52900D3C934 /* TwinkleImage1.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

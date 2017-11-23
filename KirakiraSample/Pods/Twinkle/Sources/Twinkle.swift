@@ -49,14 +49,40 @@ public class Twinkle {
     public class func twinkle(_ view: UIView, image: UIImage? = nil) {
         var twinkleLayers: [TwinkleLayer] = []
         
-        let upperBound: UInt32 = 10
-        let lowerBound: UInt32 = 5
+//        let upperBound: UInt32 = 10
+//        let lowerBound: UInt32 = 5
+        let lowerBound: UInt32 = 10
+        let upperBound: UInt32 = 20
+
         let count: UInt = UInt(arc4random_uniform(upperBound) + lowerBound)
-        
+        var selectedImage:UIImage! = UIImage.init(named: "TwinkleImage.png")
+        let arcForRandom:Int = Int(arc4random_uniform(5))
+        switch arcForRandom {
+        case 1:
+            selectedImage = UIImage.init(named: "TwinkleImage1.png")
+            break
+        case 2:
+            selectedImage = UIImage.init(named: "TwinkleImage2.png")
+            break
+        case 3:
+            selectedImage = UIImage.init(named: "TwinkleImage3.png")
+            break
+        case 4:
+            selectedImage = UIImage.init(named: "TwinkleImage4.png")
+            break
+        default:
+            break
+        }
         for i in 0..<count {
-            let twinkleLayer: TwinkleLayer = image == nil ? TwinkleLayer() : TwinkleLayer(image: image!)
-            let x: Int = Int(arc4random_uniform(UInt32(view.layer.bounds.size.width)))
-            let y: Int = Int(arc4random_uniform(UInt32(view.layer.bounds.size.height)))
+            let twinkleLayer: TwinkleLayer = selectedImage == nil ? TwinkleLayer() : TwinkleLayer(image: selectedImage)
+//            let twinkleLayer: TwinkleLayer = TwinkleLayer(image: selectedImage)
+
+//            let twinkleLayer: TwinkleLayer = image == nil ? TwinkleLayer() : TwinkleLayer(image: image!)
+            let x: Int = Int(arc4random_uniform(UInt32(view.layer.bounds.size.width-100))) + 50
+            let y: Int = Int(arc4random_uniform(UInt32(view.layer.bounds.size.height-150))) + 75
+
+//            let x: Int = Int(arc4random_uniform(UInt32(view.layer.bounds.size.width)))
+//            let y: Int = Int(arc4random_uniform(UInt32(view.layer.bounds.size.height)))
             twinkleLayer.position = CGPoint(x: CGFloat(x), y: CGFloat(y))
             twinkleLayer.opacity = 0
             twinkleLayers.append(twinkleLayer)

@@ -7,16 +7,18 @@
 //
 
 import UIKit
-//import Twinkle
+import Twinkle
 import MobileCoreServices
 import ARKit
 import SceneKit
+import Photos
 
-class ViewController: UIViewController,ARSCNViewDelegate {
+class ViewController: UIViewController,UINavigationControllerDelegate,UIImagePickerControllerDelegate{//},ARSCNViewDelegate {
     let cameraController:UIImagePickerController = UIImagePickerController()
     var isFirstTime:Bool = true
     var nodes: [SphereNode] = []
-
+    var overlayView:UIView = UIView()
+    var twinkleView: UIView = UIView()
     lazy var sceneView: ARSCNView = {
         let view = ARSCNView(frame: CGRect.zero)
         return view
@@ -33,43 +35,44 @@ class ViewController: UIViewController,ARSCNViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        sceneView.delegate = self
-         view.addSubview(sceneView)
-        view.addSubview(infoLabel)
-        self.view.backgroundColor = UIColor.blue
-        let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(handleTap))
-        tapRecognizer.numberOfTapsRequired = 1
-        sceneView.addGestureRecognizer(tapRecognizer)
-        /*
+//        sceneView.delegate = self
+        self.view.backgroundColor = UIColor.black
+//         self.view.addSubview(sceneView)
+//        self.view.addSubview(infoLabel)
+        
+//        let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(handleTap))
+//        tapRecognizer.numberOfTapsRequired = 1
+//        sceneView.addGestureRecognizer(tapRecognizer)
+        
         // using the UIView extension
-        let view: UIView = UIView(frame: CGRect(x: 0, y: 0, width: 150, height: 50))
-//        view.backgroundColor = UIColor.orange
-        self.view.addSubview(view)
-        view.twinkle()
-
-        Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(twinkleView), userInfo: nil, repeats: true)
-        */
+//        self.twinkleView = UIView(frame: CGRect(x: 0, y: 100, width: 150, height: 50))
+//        self.twinkleView.backgroundColor = UIColor.red
+//        self.view.addSubview(self.twinkleView)
+//        self.view.twinkle()
+//
+//        Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(twinkleViewWithAnimation), userInfo: nil, repeats: true)
+        
         // Do any additional setup after loading the view, typically from a nib.
     }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         //4
-        sceneView.frame = view.bounds
-         infoLabel.frame = CGRect(x: 0, y: 16, width: view.bounds.width, height: 64)
+//        sceneView.frame = view.bounds
+//         infoLabel.frame = CGRect(x: 0, y: 16, width: view.bounds.width, height: 64)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         //5
-        let configuration = ARWorldTrackingConfiguration()
-        sceneView.session.run(configuration, options: [.resetTracking, .removeExistingAnchors])
+//        let configuration = ARWorldTrackingConfiguration()
+//        sceneView.session.run(configuration, options: [.resetTracking, .removeExistingAnchors])
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         if isFirstTime == true {
             isFirstTime = false
-//            _ = startCameraFromViewController(viewController: self, withDelegate: self )
+            _ = startCameraFromViewController(viewController: self, withDelegate: self )
         }
 
     }
@@ -81,8 +84,30 @@ class ViewController: UIViewController,ARSCNViewDelegate {
         
         cameraController.sourceType = .camera
         cameraController.mediaTypes = [kUTTypeMovie as NSString as String]
-        cameraController.allowsEditing = false
+        cameraController.allowsEditing = true
         cameraController.delegate = delegate
+        
+        overlayView.removeFromSuperview()
+        
+        
+        overlayView = UIView(frame: CGRect(x: 0, y: cameraController.view.frame.origin.y+50, width: cameraController.view.frame.size.width, height: cameraController.view.frame.size.height-110))
+        overlayView.backgroundColor = UIColor.clear.withAlphaComponent(0.3)
+        overlayView.backgroundColor = UIColor.clear
+        overlayView.layer.isOpaque = false
+        overlayView.isOpaque = false
+        
+        Twinkle.twinkle(overlayView)
+        
+        Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(twinkleViewWithAnimation), userInfo: nil, repeats: true)
+
+//        UIView* overlayView = [[UIView alloc] initWithFrame:picker.view.frame];
+//        // letting png transparency be
+//        overlayView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"yourimagename.png"]];
+//        [overlayView.layer setOpaque:NO];
+//        overlayView.opaque = NO;
+        cameraController.isEditing = false
+        cameraController.showsCameraControls = true;
+        cameraController.cameraOverlayView = overlayView;
         
         self.present(cameraController, animated: true, completion: nil)
         return true
@@ -125,10 +150,13 @@ class ViewController: UIViewController,ARSCNViewDelegate {
  
     }
         
-    func twinkleView()  {
+    func twinkleViewWithAnimation()  {
 //        Twinkle.twinkle(self.view)
+        Twinkle.twinkle(overlayView)
 
     }
+    
+    //wait
     // MARK: ARSCNViewDelegate
     func session(_ session: ARSession, cameraDidChangeTrackingState camera: ARCamera) {
         //5
@@ -143,21 +171,74 @@ class ViewController: UIViewController,ARSCNViewDelegate {
         }
         infoLabel.text = status
     }
-    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         let mediaType = info[UIImagePickerControllerMediaType] as! NSString
-        dismiss(animated: true, completion: nil)
         
         // Handle a movie capture
         if mediaType == kUTTypeMovie {
             guard let path = (info[UIImagePickerControllerMediaURL] as! NSURL).path else { return }
             if UIVideoAtPathIsCompatibleWithSavedPhotosAlbum(path) {
+                UISaveVideoAtPathToSavedPhotosAlbum(path, nil, nil, nil);
+                picker.dismiss(animated: true) {
+                    _ = self.startCameraFromViewController(viewController: self, withDelegate: self )
+                }
+                //                        dismiss(animated: true, completion: nil)
+                
+                return;
+                PHPhotoLibrary.requestAuthorization({ (authStatus:PHAuthorizationStatus) in
+                     // User has not yet made a choice with regards to this application
+                   
+                    if authStatus == PHAuthorizationStatus.authorized{
+                                                
+                        PHPhotoLibrary.shared().performChanges({
+                            PHAssetChangeRequest.creationRequestForAssetFromVideo(atFileURL: info[UIImagePickerControllerMediaURL] as! URL)
+                        }) { saved, error in
+                            if saved {
+                                let alertController = UIAlertController(title: "Your video was successfully saved", message: nil, preferredStyle: .alert)
+                                let defaultAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+                                alertController.addAction(defaultAction)
+                                self.present(alertController, animated: true, completion: nil)
+                            }
+                            else{
+                                let alertController = UIAlertController(title: "There was an error saving this video", message: nil, preferredStyle: .alert)
+                                let defaultAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+                                alertController.addAction(defaultAction)
+                                self.present(alertController, animated: true, completion: nil)
+                            }
+                        }
+                    }
+                    else if authStatus == PHAuthorizationStatus.notDetermined{
+                        let alertController = UIAlertController(title: "Please check your device settings", message: nil, preferredStyle: .alert)
+                        let defaultAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+                        alertController.addAction(defaultAction)
+                        self.present(alertController, animated: true, completion: nil)
+                    }
+                    else if authStatus == PHAuthorizationStatus.restricted{
+                        let alertController = UIAlertController(title: "Please check your device settings", message: nil, preferredStyle: .alert)
+                        let defaultAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+                        alertController.addAction(defaultAction)
+                        self.present(alertController, animated: true, completion: nil)
+                    }
+                })
+                
+                
                 //                UISaveVideoAtPathToSavedPhotosAlbum(path, self, #selector(RecordVideoViewController.video(_:didFinishSavingWithError:contextInfo:)), nil)
             }
         }
+//        picker.dismiss(animated: true) {
+//            _ = self.startCameraFromViewController(viewController: self, withDelegate: self )
+//        }
+//        dismiss(animated: true, completion: nil)
+        
     }
     
+    
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-        picker.dismiss(animated: true, completion: nil)
+        picker.dismiss(animated: true) {
+            _ = self.startCameraFromViewController(viewController: self, withDelegate: self )
+        }
+        
     }
         
     override func didReceiveMemoryWarning() {

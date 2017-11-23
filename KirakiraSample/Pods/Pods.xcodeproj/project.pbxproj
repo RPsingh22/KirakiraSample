@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		0977CF5C69F02707AAAC3AAF0BC89CE8 /* Twinkle.swift in Sources */ = {isa = PBXBuildFile; fileRef = A88F1FD2D53EFC1C20DBC9F6EA5CD7B3 /* Twinkle.swift */; };
 		15F9BE740B5F7F3701AFEAA6F1CE2F4A /* Pods-KirakiraSample-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E1605A24AA5CCC9DE6EFA0069E9339B /* Pods-KirakiraSample-dummy.m */; };
+		8B8A8E421FC6F31600D3C934 /* TwinkleImage2.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B8A8E3E1FC6F31500D3C934 /* TwinkleImage2.png */; };
+		8B8A8E431FC6F31600D3C934 /* TwinkleImage1.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B8A8E3F1FC6F31500D3C934 /* TwinkleImage1.png */; };
+		8B8A8E441FC6F31600D3C934 /* TwinkleImage4.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B8A8E401FC6F31600D3C934 /* TwinkleImage4.png */; };
+		8B8A8E451FC6F31600D3C934 /* TwinkleImage3.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B8A8E411FC6F31600D3C934 /* TwinkleImage3.png */; };
 		8D188A3994A7C0F3B1EAE3EA19DCB605 /* Twinkle-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 8906CB036113258626F1AE9ED13DE8F4 /* Twinkle-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AA1DA714033A67D17E5845A0BD481E7F /* Pods-KirakiraSample-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = FB96B19D91EE227D932F90B1ADFE2B01 /* Pods-KirakiraSample-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AB52B424C2B3167A2E8C1CF7EF3D50B3 /* TwinkleImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 76D3B5B727B24922C758CB91E4E4C63C /* TwinkleImage.png */; };
@@ -39,16 +43,20 @@
 		8078109776809A70F9667EB440FED30C /* Pods-KirakiraSample-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-KirakiraSample-acknowledgements.plist"; sourceTree = "<group>"; };
 		88EB5D1DD19BD5BF859F45FA50D1DA70 /* Twinkle-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Twinkle-dummy.m"; sourceTree = "<group>"; };
 		8906CB036113258626F1AE9ED13DE8F4 /* Twinkle-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Twinkle-umbrella.h"; sourceTree = "<group>"; };
+		8B8A8E3E1FC6F31500D3C934 /* TwinkleImage2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = TwinkleImage2.png; path = Sources/Resources/TwinkleImage2.png; sourceTree = "<group>"; };
+		8B8A8E3F1FC6F31500D3C934 /* TwinkleImage1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = TwinkleImage1.png; path = Sources/Resources/TwinkleImage1.png; sourceTree = "<group>"; };
+		8B8A8E401FC6F31600D3C934 /* TwinkleImage4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = TwinkleImage4.png; path = Sources/Resources/TwinkleImage4.png; sourceTree = "<group>"; };
+		8B8A8E411FC6F31600D3C934 /* TwinkleImage3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = TwinkleImage3.png; path = Sources/Resources/TwinkleImage3.png; sourceTree = "<group>"; };
 		8FA27C468D99E3735589490BF146415E /* Twinkle-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Twinkle-prefix.pch"; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A88F1FD2D53EFC1C20DBC9F6EA5CD7B3 /* Twinkle.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Twinkle.swift; path = Sources/Twinkle.swift; sourceTree = "<group>"; };
 		A96A22F34944EA14297D61172AC2E11A /* Pods-KirakiraSample-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-KirakiraSample-frameworks.sh"; sourceTree = "<group>"; };
 		AF300FFC49D7D738520911F8791DAF4C /* Pods-KirakiraSample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-KirakiraSample.debug.xcconfig"; sourceTree = "<group>"; };
-		B4C7B988FBBCDA578C4C1F438BE372A1 /* Pods_KirakiraSample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_KirakiraSample.framework; path = "Pods-KirakiraSample.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		E37ECE9D7E929887B4A992483C667E56 /* Twinkle.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = Twinkle.modulemap; sourceTree = "<group>"; };
+		B4C7B988FBBCDA578C4C1F438BE372A1 /* Pods_KirakiraSample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KirakiraSample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E37ECE9D7E929887B4A992483C667E56 /* Twinkle.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = Twinkle.modulemap; sourceTree = "<group>"; };
 		EC41EBDCC6B032B007E2917A7E0ADB5F /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		ED2B66225B7601C45C5D2079BD196DF8 /* Pods-KirakiraSample.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-KirakiraSample.modulemap"; sourceTree = "<group>"; };
-		F02A932A84BB3B32A180D1C39057D2E3 /* Twinkle.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Twinkle.framework; path = Twinkle.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		ED2B66225B7601C45C5D2079BD196DF8 /* Pods-KirakiraSample.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-KirakiraSample.modulemap"; sourceTree = "<group>"; };
+		F02A932A84BB3B32A180D1C39057D2E3 /* Twinkle.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Twinkle.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB96B19D91EE227D932F90B1ADFE2B01 /* Pods-KirakiraSample-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-KirakiraSample-umbrella.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -136,6 +144,10 @@
 			isa = PBXGroup;
 			children = (
 				76D3B5B727B24922C758CB91E4E4C63C /* TwinkleImage.png */,
+				8B8A8E3F1FC6F31500D3C934 /* TwinkleImage1.png */,
+				8B8A8E3E1FC6F31500D3C934 /* TwinkleImage2.png */,
+				8B8A8E411FC6F31600D3C934 /* TwinkleImage3.png */,
+				8B8A8E401FC6F31600D3C934 /* TwinkleImage4.png */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -163,7 +175,6 @@
 				A83C66CDA81BB244DA3B0455C038A964 /* Resources */,
 				14324562607FA411742492C8400D7D63 /* Support Files */,
 			);
-			name = Twinkle;
 			path = Twinkle;
 			sourceTree = "<group>";
 		};
@@ -265,7 +276,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8B8A8E451FC6F31600D3C934 /* TwinkleImage3.png in Resources */,
+				8B8A8E431FC6F31600D3C934 /* TwinkleImage1.png in Resources */,
+				8B8A8E441FC6F31600D3C934 /* TwinkleImage4.png in Resources */,
 				AB52B424C2B3167A2E8C1CF7EF3D50B3 /* TwinkleImage.png in Resources */,
+				8B8A8E421FC6F31600D3C934 /* TwinkleImage2.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
